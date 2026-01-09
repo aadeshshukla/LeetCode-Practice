@@ -1,7 +1,7 @@
 #PROGRAM-1
-# a=[123,12.33,'hello',True,[1,2,3],(4,5,6),{7,8,9},{'name':'alice','age':30}]
-# for item in a:
-#     print(f"Item: {item}, Type: {type(item)}")
+a=[123,12.33,'hello',True,[1,2,3],(4,5,6),{7,8,9},{'name':'alice','age':30}]
+for item in a:
+    print(f"Item: {item}, Type: {type(item)}")
 
 #PROGRAM-2
 # tup=('name','age','city')
@@ -34,7 +34,7 @@
 
 #LIST COMPREHNSION
 #PROGRAM-3
-even_squares = [n*n if n%2==0 else n for n in range(1, 11)]
-print(even_squares)  # Output: [1, 4, 3, 16, 5, 36, 7, 64, 9, 100]
+# even_squares = [n*n if n%2==0 else n for n in range(1, 11)]
+# print(even_squares)  # Output: [1, 4, 3, 16, 5, 36, 7, 64, 9, 100]
 
-primes = [n for n in range(2, 10) if all(n % i != 0 for i in range(2, int(n**0.5) + 1))]
+# primes = [n for n in range(2, 10) if all(n % i != 0 for i in range(2, int(n**0.5) + 1))]

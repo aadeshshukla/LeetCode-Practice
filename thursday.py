@@ -23,16 +23,16 @@
 #         r.append(lst[i+1])
 # print(r) 
 #___________________________________________________-
-lst=[1,2,3,4,5]
-target=5
-a=[]
+# lst=[1,2,3,4,5]
+# target=5
+# a=[]
 
-for i in range(len(lst)):
-    for j in range(i+1,len(lst)):
-        if lst[i]+lst[j]==target:
-            b=[]
-            b.append(lst[i])
-            b.append(lst[j])
-            a.append(b)
+# for i in range(len(lst)):
+#     for j in range(i+1,len(lst)):
+#         if lst[i]+lst[j]==target:
+#             b=[]
+#             b.append(lst[i])
+#             b.append(lst[j])
+#             a.append(b)
         
-print(a)
+# print(a)
