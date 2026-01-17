@@ -14,12 +14,16 @@
 #     if output==" ":print(i)
 #     else:print(output)        
 # ___________________________________________________
-def myfunction(s):
-    s=s.lower().replace(" ","")
-    is_pal=s==s[::-1]
-    counts={}
-    for char in s:
-        counts[char]=counts.get(char,0)+1
-    return is_pal,counts    
-result=myfunction("madam")
-print(result)
+# def myfunction(s):
+#     s=s.lower().replace(" ","")
+#     is_pal=s==s[::-1]
+#     counts={}
+#     for char in s:
+#         counts[char]=counts.get(char,0)+1
+#     return is_pal,counts    
+# result=myfunction("madam")
+# print(result)
+# ______________________________________________________
+
+
+
