@@ -24,3 +24,38 @@ if __name__ == "__main__":
     print(root.children)  # Output: [TreeNode(child1), TreeNode(child2)]
     print(child1.children)  # Output: [TreeNode(child3)]
 
+# bst implementation using list
+class BSTNode:
+    def __init__(self, value):
+        self.value = value
+        self.left = None
+        self.right = None
+
+    def insert(self, value):
+        if value < self.value:
+            if self.left is None:
+                self.left = BSTNode(value)
+            else:
+                self.left.insert(value)
+        else:
+            if self.right is None:
+                self.right = BSTNode(value)
+            else:
+                self.right.insert(value)
+
+    def __repr__(self):
+        return f"BSTNode({self.value})"
+# Example usage
+if __name__ == "__main__":
+    bst = BSTNode(10)
+    bst.insert(5)
+    bst.insert(15)
+    bst.insert(3)
+    bst.insert(7)
+
+    print(bst)  # Output: BSTNode(10)
+    print(bst.left)  # Output: BSTNode(5)
+    print(bst.right)  # Output: BSTNode(15)
+    print(bst.left.left)  # Output: BSTNode(3)
+    print(bst.left.right)  # Output: BSTNode(7)
+    
