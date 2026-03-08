@@ -165,3 +165,134 @@ graph = [
 min_cost, opt_path = tsp_bfs(graph)
 print(f"Minimum cost: {min_cost}")
 print(f"Optimal path: {opt_path}")
+
+
+def tower_of_hanoi(num, source, aux, target):
+    if num == 1:
+        print(f"Move disk 1 from {source} to {target}")
+        return
+    tower_of_hanoi(num - 1, source, target, aux)
+    print(f"Move disk {num} from {source} to {target}")
+    tower_of_hanoi(num - 1, aux, source, target)
+
+num_disks = 3
+tower_of_hanoi(num_disks, "A", "B", "C")
+
+
+
+from collections import deque
+
+def monkey_banana_problem():
+    initial_state = ('Far-Chair', 'Chair-Not-Under-Banana', 'Off-Chair', 'Empty')
+    goal_state = ('Near-Chair', 'Chair-Under-Banana', 'On-Chair', 'Holding')
+
+    actions = {
+        "Move to Chair": lambda state: ('Near-Chair', state[1], state[2], state[3]) if state[0] != 'Near-Chair' else None,
+        "Push Chair under Banana": lambda state: ('Near-Chair', 'Chair-Under-Banana', state[2],  state[3]) if state[0] == 'Near-Chair' and state[1] != 'Chair-Under-Banana' else None,
+        "Climb Chair": lambda state: ('Near-Chair', 'Chair-Under-Banana', 'On-Chair', state[3]) if state[0] == 'Near-Chair' and state[1] == 'Chair-Under-Banana' and state[2] != 'On-Chair' else None,
+        "Grasp Banana": lambda state: ('Near-Chair', 'Chair-Under-Banana', 'On-Chair',  'Holding') if state[0] == 'Near-Chair' and state[1] == 'Chair-Under-Banana' and state[2] == 'On-Chair' and state[3] !='Holding' else None
+    }
+
+    dq = deque([(initial_state, [])])
+    visited = set()
+
+    while dq:
+        current_state, actions_taken = dq.popleft()
+        if current_state == goal_state:
+            for action in actions_taken:
+                print(action)
+            return
+
+        if current_state in visited:
+            continue
+        visited.add(current_state)
+
+        for action_name, action_func in actions.items():
+            next_state = action_func(current_state)
+            if next_state and (next_state not in visited):
+                dq.append((next_state, actions_taken + [f"Action: {action_name}"]))
+
+monkey_banana_problem()
+
+
+
+
+
+
+
+
+
+import math
+
+def alpha_beta_pruning(depth, node_index, maximizing_player, values, alpha, beta):
+    if depth == 0 or node_index >= len(values):
+        return values[node_index]
+
+    if maximizing_player:
+        max_eval = -math.inf
+        for i in range(2):
+            eval = alpha_beta_pruning(depth - 1, node_index * 2 + i, False, values, alpha, beta)
+            max_eval = max(max_eval, eval)
+            alpha = max(alpha, eval)
+            if beta <= alpha:
+                break
+        return max_eval
+    else:
+        min_eval = math.inf
+        for i in range(2):
+            eval = alpha_beta_pruning(depth - 1, node_index * 2 + i, True, values, alpha, beta)
+            min_eval = min(min_eval, eval)
+            beta = min(beta, eval)
+            if beta <= alpha:
+                break
+        return min_eval
+
+values = [3, 5, 6, 9, 1, 2, 0, -1]
+depth = 3
+optimal_value = alpha_beta_pruning(depth, 0, True, values, -math.inf, math.inf)
+print(f"The optimal value is: {optimal_value}")
+
+
+
+
+def printSolution(board):
+    for row in board:
+        print(" ".join("Q" if col else "." for col in row))
+    print("\n")
+
+def isSafe(board, row, col, n):
+    for i in range(row):
+        if board[i][col]:
+            return False
+    i, j = row, col
+    while i >= 0 and j >= 0:
+        if board[i][j]:
+            return False
+        i -= 1
+        j -= 1
+    i, j = row, col
+    while i >= 0 and j < n:
+        if board[i][j]:
+            return False
+        i -= 1
+        j += 1
+    return True
+
+def solveNQueens(board, row, n):
+    if row == n:
+        printSolution(board)
+        return True
+    result = False
+    for col in range(n):
+        if isSafe(board, row, col, n):
+            board[row][col] = 1
+            result = solveNQueens(board, row + 1, n) or result
+            board[row][col] = 0
+    return result
+
+def nQueens(n):
+    board = [[0] * n for _ in range(n)]
+    if not solveNQueens(board, 0, n):
+        print("No solution exists.")
+
+nQueens(8)
