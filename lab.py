@@ -296,3 +296,48 @@ def nQueens(n):
         print("No solution exists.")
 
 nQueens(8)
+
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LogisticRegression
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.metrics import accuracy_score
+
+# Sample dataset
+data = {
+    'Feature1': [2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+    'Feature2': [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+    'Class':    [0, 0, 0, 0, 1, 1, 1, 1, 1, 1]
+}
+
+df = pd.DataFrame(data)
+
+# Independent and dependent variables
+X = df[['Feature1', 'Feature2']]
+y = df['Class']
+
+# Train-test split
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.3, random_state=42
+)
+
+# Logistic Regression
+lr = LogisticRegression()
+lr.fit(X_train, y_train)
+lr_pred = lr.predict(X_test)
+
+# KNN
+knn = KNeighborsClassifier(n_neighbors=3)
+knn.fit(X_train, y_train)
+knn_pred = knn.predict(X_test)
+
+# Decision Tree
+dt = DecisionTreeClassifier()
+dt.fit(X_train, y_train)
+dt_pred = dt.predict(X_test)
+
+# Accuracy scores
+print("Logistic Regression Accuracy:", accuracy_score(y_test, lr_pred))
+print("KNN Accuracy:", accuracy_score(y_test, knn_pred))
+print("Decision Tree Accuracy:", accuracy_score(y_test, dt_pred))
