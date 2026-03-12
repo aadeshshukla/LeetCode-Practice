@@ -341,3 +341,5 @@ dt_pred = dt.predict(X_test)
 print("Logistic Regression Accuracy:", accuracy_score(y_test, lr_pred))
 print("KNN Accuracy:", accuracy_score(y_test, knn_pred))
 print("Decision Tree Accuracy:", accuracy_score(y_test, dt_pred))
+
+# 
