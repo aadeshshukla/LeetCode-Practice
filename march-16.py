@@ -35,3 +35,16 @@ for solution in solutions:
     print(solution)  # Output: [[1, 3, 0, 2], [2, 0, 3, 1]]
     
 #
+# problem: given a list of integers, return the length of the longest increasing subsequence        
+def longest_increasing_subsequence(nums):
+    if not nums:
+        return 0
+    dp = [1] * len(nums)
+    for i in range(1, len(nums)):
+        for j in range(i):
+            if nums[i] > nums[j]:
+                dp[i] = max(dp[i], dp[j] + 1)
+    return max(dp)
+# Example usage
+nums = [10, 9, 2, 5, 3, 7, 101, 18]
+print(longest_increasing_subsequence(nums))  # Output: 4 (the longest increasing subsequence is [2, 3, 7, 101])
