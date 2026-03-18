@@ -48,3 +48,4 @@ def longest_increasing_subsequence(nums):
 # Example usage
 nums = [10, 9, 2, 5, 3, 7, 101, 18]
 print(longest_increasing_subsequence(nums))  # Output: 4 (the longest increasing subsequence is [2, 3, 7, 101])
+# 
