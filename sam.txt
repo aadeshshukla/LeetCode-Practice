@@ -1,0 +1,1 @@
+curl -X POST "https://api.challenge.hennge.com/challenges/backend-recursion/004" -H "Content-Type: application/json" -H "Authorization: Basic YWFkZXNoc2h1a2xhNDcwQGdtYWlsLmNvbTowNDI3NzYwNjgy" -d "{\"github_url\":\"https://gist.github.com/aadeshshukla/30b4a8d95a631955b7550d3f5fb89c58\",\"contact_email\":\"aadeshshukla470@gmail.com\",\"solution_language\":\"python\"}"
