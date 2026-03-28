@@ -67,3 +67,4 @@ print(random.random())
 print("Random integer between 1 and 10: ")
 print(random.randint(1, 10))
 # 
+# 
