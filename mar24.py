@@ -67,4 +67,15 @@ print(random.random())
 print("Random integer between 1 and 10: ")
 print(random.randint(1, 10))
 # 
-# 
+# python AI algorithms and libraries
+# we can use the scikit-learn library for machine learning algorithms
+from sklearn import datasets
+# load the iris dataset
+iris = datasets.load_iris()
+# get the features and target
+X = iris.data
+y = iris.target
+# we can use the KNN algorithm for classification
+
+from sklearn.neighbors import KNeighborsClassifier
+# create the KNN model
