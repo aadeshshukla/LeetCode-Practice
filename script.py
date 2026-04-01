@@ -31,3 +31,6 @@ print(f"Authorization: Basic {auth_base64}")
 
 # This script generates a TOTP based on the provided   email and a secret key, then encodes the email and TOTP in Base64 for use in an HTTP Authorization header.
 # 
+# 
+# 
+# 
