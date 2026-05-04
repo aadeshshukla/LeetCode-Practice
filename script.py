@@ -32,33 +32,24 @@ print(f"Authorization: Basic {auth_base64}")
 # This script generates a TOTP based on the provided   email and a secret key, then encodes the email and TOTP in Base64 for use in an HTTP Authorization header.
 # 
 # 
-# 
-# 
-# 
-# 
-# 
-# 
-# 
-# 
-# 
-# 
-# 
-# 
-# 
-# 
-# 
-# 
-# 
-# 
-# 
-# 
-# 
-# 
-# 
-# 
-# 
-# 
-# 
-
-# 
-# 
+# lets do some revision of python from basics to advanced concepts.
+# 1. Basics:
+# - Variables and Data Types
+# - Control Structures (if, for, while)
+# - Functions
+# - Lists, Tuples, Dictionaries, Sets
+# 2. Object-Oriented Programming:
+# - Classes and Objects
+# - Inheritance
+# - Polymorphism
+# 3. Advanced Concepts:
+# - Decorators
+# - Generators
+# - Context Managers
+# 4. Libraries and Frameworks:
+# - NumPy, Pandas for data manipulation
+# - Flask, Django for web development
+# 5. Best Practices:
+# - Code readability
+# - Error handling
+# - Testing and Debugging
