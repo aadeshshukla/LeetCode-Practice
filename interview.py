@@ -37,3 +37,10 @@
 #  A module can be imported using the import statement, while a package can be imported using
 # the import statement followed by the package name and the module name.
 
+# 9. How do you handle file I/O in Python?
+# In Python, you can handle file I/O using the built-in open() function, which allows you to read from and write to files.
+# You can specify the mode in which you want to open the file (e.g., 'r' for reading, 'w' for writing, 'a' for appending), and you can use methods like read(), readline(), and write() to interact with the file.
+
+# 10. What is the difference between a class and an object in Python?
+# A class is a blueprint for creating objects, while an object is an instance of a class.
+#  A class defines the attributes and methods that an object can have, while an object is a specific instance of a class that has its own unique state and behavior.    
