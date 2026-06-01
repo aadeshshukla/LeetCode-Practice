@@ -28,3 +28,4 @@ y_pred=(m*x_new)+b
 print(f"predicted value of y is {y_pred}")
 # 
 # 
+# 
