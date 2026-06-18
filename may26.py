@@ -27,3 +27,5 @@ x_new=int(input("enter new value of x"))
 y_pred=(m*x_new)+b
 print(f"predicted value of y is {y_pred}")
 # 
+# 
+# 
