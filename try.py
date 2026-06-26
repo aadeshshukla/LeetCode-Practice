@@ -29,3 +29,4 @@ def fibonacci(n):
 n_terms = 10
 fib_sequence = fibonacci(n_terms)
 print(f"The first {n_terms} terms of the Fibonacci series are: {fib_sequence}")
+
