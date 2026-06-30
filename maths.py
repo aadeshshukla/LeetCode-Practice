@@ -191,3 +191,16 @@ def logarithm(value, base=math.e):
     return math.log(value, base)
 
 print(logarithm(100, 10))  # Output: 2.0
+m=[[1, 2, 3], [0, 1, 4], [5, 6, 0]]
+print(inverse_3x3(m))
+
+
+# code to find bitwise AND of two numbers
+def bitwise_and(a, b):
+    return a & b
+
+# code to find bitwise OR of two numbers
+def bitwise_or(a, b):
+    return a | b
+
+    
