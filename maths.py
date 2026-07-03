@@ -640,3 +640,6 @@ def henrys_law(henrys_constant, concentration):
 
 def rate_of_reaction(concentration_initial, concentration_final, time):
     return (concentration_final - concentration_initial) / time
+
+# 
+# 
