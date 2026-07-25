@@ -24,4 +24,4 @@ for arr, n in test_arrays:
     result = find_missing_number(arr, n)
     print(f"Missing number in array {arr}: {result}")
     print()
-    
+    # 
